@@ -1,2 +1,2 @@
-# mybatis
+# ssm
 ssm整合
