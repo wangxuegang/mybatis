@@ -4,22 +4,22 @@
 	
 	<!-- 保存用户 -->
 	<insert id="insertUser" parameterType="com.wangxuegang.enitiy.UserEo">
-		insert into w_user
+		INSERT INTO W_USER
 		<trim prefix="(" suffix=")" suffixOverrides=",">
 			<if test="loginName != null">
-				login_name,
+				LOGIN_NAME,
 			</if>
 			<if test="userName != null">
-				user_name,
+				USER_NAME,
 			</if>
 			<if test="password != null">
-				password,
+				PASSWORD,
 			</if>
 			<if test="phone != null">
-				phone,
+				PHONE,
 			</if>
 			<if test="email != null">
-				email,
+				EMAIL,
 			</if>
 		</trim>
 		<trim prefix="values(" suffix=")" suffixOverrides=",">
@@ -40,4 +40,46 @@
 			</if>
 		</trim>
 	</insert>
+	
+	<!-- 用户列表 -->
+	<select id="getUserList" resultType="com.wangxuegang.model.UserVo">
+		SELECT
+			A.USER_ID AS USERID,
+			A.LOGIN_NAME AS LOGINNAME, 
+			A.USER_NAME AS USERNAME, 
+			A.PASSWORD, 
+			A.PHONE, 
+			A.EMAIL, 
+			A.CREATE_DATE AS CREATEDATE
+		FROM
+			W_USER A
+	</select>
+	
+	<!-- 删除用户 -->
+	<delete id="deleteUser" parameterType="com.wangxuegang.model.UserVo">
+		DELETE FROM W_USER WHERE USER_ID = #{ userId}
+	</delete>
+	
+	<!-- 编辑用户 -->
+	<update id="updateUser" parameterType="com.wangxuegang.enitiy.UserEo">
+		UPDATE W_USER
+		<trim prefix="set" suffixOverrides=",">
+			<if test="loginName != null">
+				LOGIN_NAME = #{loginName}
+			</if>
+			<if test="userName != null">
+				USER_NAME = #{userName}
+			</if>
+			<if test="password != null">
+				PASSWORD = #{password}
+			</if>
+			<if test="phone != null">
+				PHONE = #{phone}
+			</if>
+			<if test="email != null">
+				EMAIL = #{email}
+			</if>
+		</trim>
+		WHERE USERID = #{ userId}
+	</update>
 </mapper>

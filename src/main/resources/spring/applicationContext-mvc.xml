@@ -16,6 +16,9 @@
 	<!-- 全局异常 -->
 	<bean id="globalException" class="com.wangxuegang.exception.GlobalException"></bean>
 	
+	<!-- 对静态资源文件的访问  restful-->     
+	<mvc:resources mapping="/resources/**" location="/,/resources/" />
+	
 	<!-- 配置SpringMVC的视图解析器 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/"/>

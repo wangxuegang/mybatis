@@ -1,5 +1,7 @@
 package com.wangxuegang.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,4 +35,23 @@ public class UserServiceImpl implements UserService {
 		userDao.insertUser(userEo);
 	}
 
+	@Override
+	public List<UserVo> getUserList() {
+		return userDao.getUserList();
+	
+	}
+	
+	@Override
+	public void deleteUser(UserVo userVo) {
+		userDao.deleteUser(userVo);
+	}
+
+	@Override
+	public void updateUser(UserVo userVo) {
+		UserEo userEo = new UserEo();
+		BeanUtils.copyProperties(userVo, userEo);
+		userDao.updateUser(userEo);
+	}
 }
+
+	
