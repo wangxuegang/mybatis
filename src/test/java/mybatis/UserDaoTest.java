@@ -53,10 +53,10 @@ public class UserDaoTest {
 		userDao.insertUser(userEo);
 	}*/
 	
-	@Test
+	/*@Test
 	public void userServiceTest() throws Exception{
 		UserService userService = (UserService) ac.getBean("userService");
 		UserVo userVo = new UserVo();
 		userService.saveUser(userVo);
-	}
+	}*/
 }
