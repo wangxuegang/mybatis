@@ -40,7 +40,7 @@ public class UserDaoTest {
 		System.out.println(dataSource);
 	}
 	
-	@Test
+	/*@Test
 	public void userDaoTest(){
 		
 		UserDao userDao = (UserDao) ac.getBean("userDao");
@@ -51,7 +51,7 @@ public class UserDaoTest {
 		userEo.setPhone("13766677799");
 		userEo.setEmail("123@163.com");
 		userDao.insertUser(userEo);
-	}
+	}*/
 	
 	@Test
 	public void userServiceTest() throws Exception{
