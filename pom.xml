@@ -4,6 +4,7 @@
 	<groupId>com.wangxuegang</groupId>
 	<artifactId>ssm</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
 	<name>SSM Demo</name>
 	<description>SSM Demo</description>
 	
